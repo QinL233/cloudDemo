@@ -12,3 +12,6 @@ eureka:
 feign:
   hystrix:
     enabled: true #在Feign中开启Hystrix
+logging:
+  level:
+    com.lqz.feign_server.service.SysUserService: debug
