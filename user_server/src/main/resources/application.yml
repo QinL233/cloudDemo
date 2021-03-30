@@ -1,0 +1,18 @@
+server:
+  port: 8102
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/max_user?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://admin:123@localhost:8001/eureka/
+mybatis:
+  mapper-locations:
+    - classpath:mybatis-mapper/com/**/mapper/*.xml
