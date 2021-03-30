@@ -1,17 +1,18 @@
 package com.lqz.user_server.controller;
 
-import com.lqz.user_server.entity.SysUser;
-import com.lqz.user_server.service.SysUserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.lqz.user_server.entity.SysUser;
+import com.lqz.user_server.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author liaoQinZhou
@@ -21,13 +22,11 @@ import java.util.List;
 @RequestMapping("/sysUser")
 public class SysUserController {
     @Autowired
-    private  SysUserService sysUserService;
+    private SysUserService sysUserService;
 
     @GetMapping("/list")
-    public List<SysUser> list(@RequestBody(required = false) SysUser entity){
-        QueryWrapper<SysUser> wrapper = new QueryWrapper<>();
-        wrapper.setEntity(entity);
-        return sysUserService.list(wrapper);
+    public List<SysUser> list(@RequestBody(required = false) SysUser entity) {
+        return sysUserService.queryAll(entity);
     }
 
     @GetMapping("/page")
