@@ -1,6 +1,7 @@
 package com.lqz.feign_server.service;
 
 import com.lqz.feign_server.entity.SysUser;
+import com.lqz.feign_server.service.impl.SysUserFallbackService;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,7 +16,7 @@ import java.util.List;
  * @author liaoQinZhou
  * @since 2021-03-30
  */
-@FeignClient(value = "user-service")
+@FeignClient(value = "user-service",fallback = SysUserFallbackService.class)
 public interface SysUserService {
 
     /**
