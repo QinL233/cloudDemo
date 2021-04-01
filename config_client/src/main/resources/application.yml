@@ -1,0 +1,15 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: config-client
+  cloud:
+    config: #Config客户端配置
+      uri: http://localhost:8901 #配置中心地址
+      name: config-client #配置文件名称
+      profile: dev #启用配置后缀名称
+      label: master #分支名称
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:123@localhost:8001/eureka/
