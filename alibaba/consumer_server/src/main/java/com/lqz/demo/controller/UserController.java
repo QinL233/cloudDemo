@@ -14,6 +14,7 @@ import java.util.Collection;
  * @createTime 2021年06月10日 15:32:00
  */
 @RestController
+@CrossOrigin
 @RequestMapping("/user")
 public class UserController {
 
