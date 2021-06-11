@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: consumer-server
+  main:
+    allow-bean-definition-overriding: true
   cloud:
     nacos:
       discovery:
@@ -11,7 +13,9 @@ dubbo:
   protocol:
     name: dubbo
     port: -1
-  registry:
-    address: spring-cloud://localhost
   cloud:
     subscribed-services: provider-server
+  registry:
+    address: spring-cloud://localhost
+  consumer:
+    check: false

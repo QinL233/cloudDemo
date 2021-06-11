@@ -2,7 +2,7 @@ package com.lqz.demo.controller;
 
 import com.lqz.demo.entity.User;
 import com.lqz.demo.service.UserService;
-import org.apache.dubbo.config.annotation.Reference;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -17,7 +17,7 @@ import java.util.Collection;
 @RequestMapping("/user")
 public class UserController {
 
-    @Reference
+    @DubboReference
     private UserService userService;
 
     @PostMapping("/save")

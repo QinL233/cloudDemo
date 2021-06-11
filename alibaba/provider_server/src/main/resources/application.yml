@@ -3,9 +3,13 @@ server:
 spring:
   application:
     name: provider-server
+  main:
+    allow-bean-definition-overriding: true
   cloud:
     nacos:
       discovery:
+        enabled: true
+        register-enabled: true
         server-addr: 127.0.0.1:8848
 dubbo:
   scan:

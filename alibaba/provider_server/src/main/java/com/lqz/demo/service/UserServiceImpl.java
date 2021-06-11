@@ -1,7 +1,7 @@
 package com.lqz.demo.service;
 
 import com.lqz.demo.entity.User;
-import org.apache.dubbo.config.annotation.Service;
+import org.apache.dubbo.config.annotation.DubboService;
 
 import java.util.Collection;
 import java.util.Map;
@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @Description TODO
  * @createTime 2021年06月10日 15:25:00
  */
-@Service
+@DubboService
 public class UserServiceImpl implements UserService {
 
     private final Map<Long, User> map = new ConcurrentHashMap<>();
