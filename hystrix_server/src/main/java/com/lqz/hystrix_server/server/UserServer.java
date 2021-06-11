@@ -34,7 +34,7 @@ public class UserServer {
      */
     @CacheResult()
     @HystrixCommand(fallbackMethod = "emptyList",
-            commandKey = "list", groupKey = "UserService", threadPoolKey = "userServiceThreadPool")
+                                           commandKey = "list", groupKey = "UserService", threadPoolKey = "userServiceThreadPool")
     public ResultResponse list(String id) {
         List<SysUser> result = restTemplate.getForObject(userServiceUrl + "/sysUser/list", List.class);
         return new ResultResponse(result);
