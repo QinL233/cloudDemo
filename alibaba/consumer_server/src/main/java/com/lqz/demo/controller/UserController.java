@@ -2,13 +2,9 @@ package com.lqz.demo.controller;
 
 import com.lqz.demo.entity.User;
 import com.lqz.demo.service.UserService;
-import com.lqz.demo.util.SerializingUtil;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.InputStream;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -29,9 +25,7 @@ public class UserController {
 
     @PostMapping("/save")
     public String save(User entity) {
-        byte[] serialize = SerializingUtil.serialize(entity);
-        User user = SerializingUtil.deserialize(serialize, User.class);
-        if (userService.save(user)) {
+        if (userService.save(entity)) {
             return "success";
         }
         return "fail";
@@ -39,9 +33,7 @@ public class UserController {
 
     @PostMapping(value = "/save2")
     public String save2(@RequestBody User entity) {
-        byte[] serialize = SerializingUtil.serialize(entity);
-        User user = SerializingUtil.deserialize(serialize, User.class);
-        if (userService.save(user)) {
+        if (userService.save(entity)) {
             return "success";
         }
         return "fail";
