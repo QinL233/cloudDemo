@@ -4,6 +4,7 @@ import com.lqz.demo.entity.User;
 import org.apache.dubbo.config.annotation.DubboService;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -22,6 +23,18 @@ public class UserServiceImpl implements UserService {
     public boolean save(User entity) {
         map.put(entity.getId(), entity);
         return true;
+    }
+
+    @Override
+    public boolean save(Map<String, User> entity) {
+        System.out.println(entity);
+        return false;
+    }
+
+    @Override
+    public boolean save(List<User> entity) {
+        System.out.println(entity);
+        return false;
     }
 
     @Override

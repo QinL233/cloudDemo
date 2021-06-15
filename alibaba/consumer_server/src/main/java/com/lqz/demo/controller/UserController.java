@@ -6,6 +6,8 @@ import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author liaoqinzhou_sz
@@ -22,7 +24,31 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/save")
-    public String save(@RequestBody User entity) {
+    public String save(User entity) {
+        if (userService.save(entity)) {
+            return "success";
+        }
+        return "fail";
+    }
+
+    @PostMapping("/save2")
+    public String save2(@RequestBody User entity) {
+        if (userService.save(entity)) {
+            return "success";
+        }
+        return "fail";
+    }
+
+    @PostMapping("/save3")
+    public String save3(@RequestBody Map<String,User> entity) {
+        if (userService.save(entity)) {
+            return "success";
+        }
+        return "fail";
+    }
+
+    @PostMapping("/save4")
+    public String save4(@RequestBody List<User> entity) {
         if (userService.save(entity)) {
             return "success";
         }
@@ -38,4 +64,6 @@ public class UserController {
     public Collection<User> all() {
         return userService.all();
     }
+
+
 }
