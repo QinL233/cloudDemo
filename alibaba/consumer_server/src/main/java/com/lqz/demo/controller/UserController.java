@@ -4,6 +4,7 @@ import com.lqz.demo.entity.User;
 import com.lqz.demo.service.UserService;
 import com.lqz.demo.util.SerializingUtil;
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;

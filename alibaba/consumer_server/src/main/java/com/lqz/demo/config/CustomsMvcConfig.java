@@ -1,6 +1,8 @@
 package com.lqz.demo.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.protobuf.ProtobufHttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -12,13 +14,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 @Configuration
 public class CustomsMvcConfig implements WebMvcConfigurer {
-    /**
-     * 跨域
-     * @param registry
-     */
+
     @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
+    public void addCorsMappings(CorsRegistry corsRegistry) {
+        corsRegistry.addMapping("/**")
                 .allowedOriginPatterns("*")
                 .allowCredentials(true)
                 .allowedMethods("*")
@@ -30,4 +29,15 @@ public class CustomsMvcConfig implements WebMvcConfigurer {
                 .exposedHeaders("Access-Control-Request-Headers")
                 .exposedHeaders("token");
     }
+
+    /**
+     * 修改序列化方式
+     *
+     * @return
+     */
+    @Bean
+    public ProtobufHttpMessageConverter protobufHttpMessageConverter() {
+        return new ProtobufHttpMessageConverter();
+    }
+
 }

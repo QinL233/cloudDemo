@@ -10,7 +10,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @Description provider dubbo application
  * @createTime 2021年06月10日 15:26:00
  */
-
 @EnableDiscoveryClient
 @EnableAutoConfiguration
 public class ProviderServerApplication {
