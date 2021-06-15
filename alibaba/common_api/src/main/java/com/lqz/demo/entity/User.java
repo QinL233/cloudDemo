@@ -37,4 +37,13 @@ public class User {
     public void setPassword(Long password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username=" + username +
+                ", password=" + password +
+                '}';
+    }
 }
