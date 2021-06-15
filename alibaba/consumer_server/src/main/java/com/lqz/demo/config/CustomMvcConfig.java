@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @createTime 2021年06月15日 09:42:00
  */
 @Configuration
-public class CustomsMvcConfig implements WebMvcConfigurer {
+public class CustomMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry corsRegistry) {
@@ -39,5 +39,4 @@ public class CustomsMvcConfig implements WebMvcConfigurer {
     public ProtobufHttpMessageConverter protobufHttpMessageConverter() {
         return new ProtobufHttpMessageConverter();
     }
-
 }

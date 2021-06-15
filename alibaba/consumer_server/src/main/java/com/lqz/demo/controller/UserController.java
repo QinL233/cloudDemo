@@ -4,7 +4,6 @@ import com.lqz.demo.entity.User;
 import com.lqz.demo.service.UserService;
 import com.lqz.demo.util.SerializingUtil;
 import org.apache.dubbo.config.annotation.DubboReference;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -27,13 +26,15 @@ public class UserController {
 
     @PostMapping("/save")
     public String save(User entity) {
-        if (userService.save(entity)) {
+        byte[] serialize = SerializingUtil.serialize(entity);
+        User user = SerializingUtil.deserialize(serialize, User.class);
+        if (userService.save(user)) {
             return "success";
         }
         return "fail";
     }
 
-    @PostMapping("/save2")
+    @PostMapping(value = "/save2", produces = "application/x-protobuf")
     public String save2(@RequestBody User entity) {
         byte[] serialize = SerializingUtil.serialize(entity);
         User user = SerializingUtil.deserialize(serialize, User.class);
@@ -44,7 +45,7 @@ public class UserController {
     }
 
     @PostMapping("/save3")
-    public String save3(@RequestBody Map<String,User> entity) {
+    public String save3(@RequestBody Map<String, User> entity) {
         if (userService.save(entity)) {
             return "success";
         }
