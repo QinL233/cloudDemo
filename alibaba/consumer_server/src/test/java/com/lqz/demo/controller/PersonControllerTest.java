@@ -1,8 +1,6 @@
 package com.lqz.demo.controller;
 
 import com.lqz.demo.entity.Person;
-import com.lqz.demo.entity.User;
-import com.lqz.demo.util.SerializingUtil;
 import org.apache.http.HttpEntity;
 import org.apache.http.ParseException;
 import org.apache.http.client.ClientProtocolException;
