@@ -38,6 +38,6 @@ public class CustomMvcConfig implements WebMvcConfigurer {
      */
     @Bean
     public HttpMessageConverter httpMessageConverter() {
-        return new ProtobufHttpMessageConverter();
+        return new ProtostuffHttpMessageConverter();
     }
 }

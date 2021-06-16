@@ -1,6 +1,7 @@
 package com.lqz.demo.controller;
 
 import com.lqz.demo.entity.User;
+import com.lqz.demo.util.SerializingUtil;
 import org.apache.http.HttpEntity;
 import org.apache.http.ParseException;
 import org.apache.http.client.ClientProtocolException;
@@ -32,6 +33,8 @@ public class UserControllerTest {
         user.setId(1L);
         user.setUsername("username");
         user.setPassword("password");
+        byte[] body = SerializingUtil.serialize(user);
+        doPostTestTwo(url,body);
     }
 
     void doPostTestTwo(String url, byte[] body) {
