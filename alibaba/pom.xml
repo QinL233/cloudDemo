@@ -25,6 +25,9 @@
         <spring-cloud.version>2020.0.2</spring-cloud.version>
         <alibaba.version>2021.1</alibaba.version>
         <swagger.version>2.9.2</swagger.version>
+        <protostuff.version>2.7.8</protostuff.version>
+        <protobuf.version>3.11.0</protobuf.version>
+        <httpclient.version>4.5.5</httpclient.version>
     </properties>
 
     <dependencyManagement>
@@ -55,6 +58,29 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-serialization-protostuff</artifactId>
+                <version>${protostuff.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java-util</artifactId>
+                <version>${protobuf.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
             </dependency>
 
         </dependencies>

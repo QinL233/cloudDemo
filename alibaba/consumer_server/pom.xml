@@ -34,9 +34,8 @@
         </dependency>
         <!-- cloud alibaba sentinel -->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
+            <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-            <version>0.2.0.RELEASE</version>
         </dependency>
         <!-- cloud alibaba dubbo-->
         <dependency>
@@ -50,7 +49,6 @@
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-serialization-protostuff</artifactId>
-            <version>2.7.8</version>
         </dependency>
         <!-- swagger -->
         <dependency>
@@ -65,7 +63,6 @@
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
-            <version>4.5.5</version>
         </dependency>
 
     </dependencies>
