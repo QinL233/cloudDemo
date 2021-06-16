@@ -51,7 +51,8 @@ public class PersonControllerTest {
             System.out.println("响应状态为:" + response.getStatusLine());
             if (responseEntity != null) {
                 System.out.println("响应内容长度为:" + responseEntity.getContentLength());
-                System.out.println("响应内容为:" + EntityUtils.toString(responseEntity));
+                Person.PersonResponse personResponse = Person.PersonResponse.parseFrom(EntityUtils.toByteArray(responseEntity));
+                System.out.println("响应内容为:" + personResponse);
             }
         } catch (ClientProtocolException e) {
             e.printStackTrace();
