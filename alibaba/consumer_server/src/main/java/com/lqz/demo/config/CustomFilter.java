@@ -27,17 +27,6 @@ public class CustomFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         System.out.println("first filter start");
-        try {
-            InputStream is = request.getInputStream();
-            StringBuilder sb = new StringBuilder();
-            byte[] b = new byte[4096];
-            for (int n; (n = is.read(b)) != -1; ) {
-                sb.append(new String(b, 0, n));
-            }
-            System.out.println(sb.toString());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         chain.doFilter(request, response);
         System.out.println("first filter end");
     }

@@ -29,7 +29,7 @@ public class UserController {
         return "fail";
     }
 
-    @PostMapping(value = "/save2", produces = "application/x-protobuf")
+    @PostMapping(value = "/save2")
     public String save2(@RequestBody User entity) {
         if (userService.save(entity)) {
             return "success";

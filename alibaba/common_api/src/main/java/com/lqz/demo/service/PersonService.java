@@ -13,9 +13,9 @@ import java.util.Collection;
  */
 public interface PersonService {
 
-    boolean save(Person entity);
+    Person.PersonResponse save(Person.PersonRequest entity);
 
-    Person getById(Long id);
+    Person.PersonRequest getById(Long id);
 
-    Collection<Person> all();
+    Collection<Person.PersonRequest> all();
 }

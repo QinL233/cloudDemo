@@ -21,29 +21,19 @@ public class PersonController {
     @DubboReference
     private PersonService personService;
 
-    @GetMapping(value = "/save", produces = "application/x-protobuf")
-    public String save(Person entity) {
-        if (personService.save(entity)) {
-            return "success";
-        }
-        return "fail";
-    }
-
-    @PostMapping(value = "/save2", produces = "application/x-protobuf")
-    public String save2(@RequestBody Person entity) {
-        if (personService.save(entity)) {
-            return "success";
-        }
-        return "fail";
+    @PostMapping(value = "/save")
+    public Person.PersonResponse save(@RequestBody Person.PersonRequest entity) {
+        Person.PersonResponse personResponse = personService.save(entity);
+        return personResponse;
     }
 
     @GetMapping("/{id}")
-    public Person getById(@PathVariable Long id) {
+    public Person.PersonRequest getById(@PathVariable Long id) {
         return personService.getById(id);
     }
 
     @GetMapping("/all")
-    public Collection<Person> all() {
+    public Collection<Person.PersonRequest> all() {
         return personService.all();
     }
 
