@@ -11,8 +11,6 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-        enabled: true
-        register-enabled: true
     # sentinel 服务治理
     sentinel:
       eager: true
@@ -29,3 +27,5 @@ dubbo:
     port: -1
     serialization: protostuff
     charset: UTF-8
+  cloud:
+    subscribed-services:

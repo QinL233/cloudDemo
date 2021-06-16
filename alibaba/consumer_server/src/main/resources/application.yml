@@ -11,8 +11,6 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-        enabled: true
-        register-enabled: false
     # sentinel 服务治理
     sentinel:
       eager: true
