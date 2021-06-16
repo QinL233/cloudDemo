@@ -1,5 +1,13 @@
 package com.lqz.demo.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import java.io.Serializable;
 
 /**
@@ -8,45 +16,19 @@ import java.io.Serializable;
  * @Description TODO
  * @createTime 2021年06月10日 14:37:00
  */
+@NoArgsConstructor
+@ToString
+@EqualsAndHashCode(callSuper = false)
+@Data
+@TableName("sys_user")
 public class User implements Serializable {
 
     private static final long serialVersionUID = 474447092288987532L;
+
+    @TableId(type = IdType.AUTO)
     private Long id;
 
     private String username;
 
     private String password;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username=" + username +
-                ", password=" + password +
-                '}';
-    }
 }

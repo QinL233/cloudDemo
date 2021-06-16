@@ -1,12 +1,13 @@
 package com.lqz.demo.service;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lqz.demo.entity.User;
+import com.lqz.demo.mapper.UserMapper;
 import org.apache.dubbo.config.annotation.DubboService;
 
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author liaoqinzhou_sz
@@ -15,35 +16,30 @@ import java.util.concurrent.ConcurrentHashMap;
  * @createTime 2021年06月10日 15:25:00
  */
 @DubboService
-public class UserServiceImpl implements UserService {
-
-    private final Map<Long, User> map = new ConcurrentHashMap<>();
+public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
     @Override
     public boolean save(User entity) {
-        map.put(entity.getId(), entity);
-        return true;
+        return save(entity);
     }
 
     @Override
     public boolean save(Map<String, User> entity) {
-        System.out.println(entity);
-        return false;
+        return save(entity);
     }
 
     @Override
     public boolean save(List<User> entity) {
-        System.out.println(entity);
-        return false;
+        return save(entity);
     }
 
     @Override
     public User getById(Long id) {
-        return map.get(id);
+        return getById(id);
     }
 
     @Override
     public Collection<User> all() {
-        return map.values();
+        return list();
     }
 }
