@@ -1,8 +1,5 @@
 package com.lqz.demo.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -20,12 +17,10 @@ import java.io.Serializable;
 @ToString
 @EqualsAndHashCode(callSuper = false)
 @Data
-@TableName("sys_user")
 public class User implements Serializable {
 
     private static final long serialVersionUID = 474447092288987532L;
 
-    @TableId(type = IdType.AUTO)
     private Long id;
 
     private String username;
