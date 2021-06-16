@@ -35,8 +35,6 @@ public class CustomFilter implements Filter {
                 sb.append(new String(b, 0, n));
             }
             System.out.println(sb.toString());
-            User user = SerializingUtil.deserialize(sb.toString().getBytes(), User.class);
-            System.out.println(user);
         } catch (Exception e) {
             e.printStackTrace();
         }

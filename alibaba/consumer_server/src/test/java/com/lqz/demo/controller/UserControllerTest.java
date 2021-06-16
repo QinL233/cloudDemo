@@ -2,22 +2,20 @@ package com.lqz.demo.controller;
 
 import com.lqz.demo.entity.User;
 import com.lqz.demo.util.SerializingUtil;
+import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.ParseException;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ByteArrayEntity;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.converter.protobuf.ProtobufHttpMessageConverter;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 
 /**
@@ -33,14 +31,14 @@ public class UserControllerTest {
     void proto() throws MalformedURLException {
         String url = "http://localhost:8080/user/save2";
         User user = new User();
-        user.setId(0L);
-        user.setUsername(1L);
-        user.setPassword(2L);
+        user.setId(1L);
+        user.setUsername("username");
+        user.setPassword("password");
         byte[] body = SerializingUtil.serialize(user);
-        doPostTestTwo(url,body);
+        doPostTestTwo(url, body);
     }
 
-    void doPostTestTwo(String url,byte[] body) {
+    void doPostTestTwo(String url, byte[] body) {
         CloseableHttpClient httpClient = HttpClientBuilder.create().build();
         HttpPost httpPost = new HttpPost(url);
 

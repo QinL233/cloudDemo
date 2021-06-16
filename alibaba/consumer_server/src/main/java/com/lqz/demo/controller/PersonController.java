@@ -1,7 +1,7 @@
 package com.lqz.demo.controller;
 
-import com.lqz.demo.entity.User;
-import com.lqz.demo.service.UserService;
+import com.lqz.demo.entity.Person;
+import com.lqz.demo.service.PersonService;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,40 +11,40 @@ import java.util.Collection;
  * @author liaoqinzhou_sz
  * @version 1.0.0
  * @Description TODO
- * @createTime 2021年06月10日 15:32:00
+ * @createTime 2021年06月16日 09:42:00
  */
 @RestController
 @CrossOrigin
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/person")
+public class PersonController {
 
     @DubboReference
-    private UserService userService;
+    private PersonService personService;
 
     @GetMapping(value = "/save", produces = "application/x-protobuf")
-    public String save(User entity) {
-        if (userService.save(entity)) {
+    public String save(Person entity) {
+        if (personService.save(entity)) {
             return "success";
         }
         return "fail";
     }
 
     @PostMapping(value = "/save2", produces = "application/x-protobuf")
-    public String save2(@RequestBody User entity) {
-        if (userService.save(entity)) {
+    public String save2(@RequestBody Person entity) {
+        if (personService.save(entity)) {
             return "success";
         }
         return "fail";
     }
 
     @GetMapping("/{id}")
-    public User getById(@PathVariable Long id) {
-        return userService.getById(id);
+    public Person getById(@PathVariable Long id) {
+        return personService.getById(id);
     }
 
     @GetMapping("/all")
-    public Collection<User> all() {
-        return userService.all();
+    public Collection<Person> all() {
+        return personService.all();
     }
 
 }

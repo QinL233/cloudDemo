@@ -1,18 +1,21 @@
 package com.lqz.demo.entity;
 
+import java.io.Serializable;
+
 /**
  * @author liaoqinzhou_sz
  * @version 1.0.0
  * @Description TODO
  * @createTime 2021年06月10日 14:37:00
  */
-public class User {
+public class User implements Serializable {
 
+    private static final long serialVersionUID = 474447092288987532L;
     private Long id;
 
-    private Long username;
+    private String username;
 
-    private Long password;
+    private String password;
 
     public Long getId() {
         return id;
@@ -22,19 +25,19 @@ public class User {
         this.id = id;
     }
 
-    public Long getUsername() {
+    public String getUsername() {
         return username;
     }
 
-    public void setUsername(Long username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
-    public Long getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(Long password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
