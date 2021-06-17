@@ -20,17 +20,19 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     public boolean save(User entity) {
-        return save(entity);
+        return saveOrUpdate(entity);
     }
 
     @Override
     public boolean save(Map<String, User> entity) {
-        return save(entity);
+        entity.forEach((k,v)->save(v));
+        return true;
     }
 
     @Override
     public boolean save(List<User> entity) {
-        return save(entity);
+        entity.forEach(v->save(v));
+        return true;
     }
 
     @Override
