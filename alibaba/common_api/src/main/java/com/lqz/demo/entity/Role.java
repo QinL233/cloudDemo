@@ -1,5 +1,10 @@
 package com.lqz.demo.entity;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import java.io.Serializable;
 
 /**
@@ -8,25 +13,15 @@ import java.io.Serializable;
  * @Description TODO
  * @createTime 2021年06月10日 17:36:00
  */
-public class Role implements Serializable {
-    private static final long serialVersionUID = 2075061073555158858L;
+@NoArgsConstructor
+@ToString
+@EqualsAndHashCode(callSuper = false)
+@Data
+public class Role implements Serializable{
+
+    private static final long serialVersionUID = 589469880986789329L;
+
     private Long id;
 
     private String name;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

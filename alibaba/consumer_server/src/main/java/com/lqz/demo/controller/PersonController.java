@@ -27,11 +27,6 @@ public class PersonController {
         return personResponse;
     }
 
-    @GetMapping("/{id}")
-    public Person.PersonRequest getById(@PathVariable Long id) {
-        return personService.getById(id);
-    }
-
     @GetMapping("/all")
     public Collection<Person.PersonRequest> all() {
         return personService.all();

@@ -24,7 +24,7 @@ dubbo:
     port: -1
   #订阅的服务
   cloud:
-    subscribed-services: provider-server
+    subscribed-services: provider-server,provider2-server
   #懒加载
   consumer:
     check: false

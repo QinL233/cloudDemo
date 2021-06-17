@@ -11,6 +11,7 @@
         <module>common_api</module>
         <module>provider_server</module>
         <module>consumer_server</module>
+        <module>provider2_server</module>
     </modules>
     <packaging>pom</packaging>
 

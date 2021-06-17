@@ -32,11 +32,6 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public Person.PersonRequest getById(Long id) {
-        return map.get(id);
-    }
-
-    @Override
     public Collection<Person.PersonRequest> all() {
         return map.values();
     }

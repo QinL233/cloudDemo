@@ -12,9 +12,7 @@ import java.util.Collection;
  */
 public interface RoleService {
 
-    boolean save(Role entity);
-
-    Role getById(Long id);
+    boolean saveRole(Role entity);
 
     Collection<Role> all();
 }

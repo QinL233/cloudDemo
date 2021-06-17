@@ -15,7 +15,5 @@ public interface PersonService {
 
     Person.PersonResponse save(Person.PersonRequest entity);
 
-    Person.PersonRequest getById(Long id);
-
     Collection<Person.PersonRequest> all();
 }

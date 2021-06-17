@@ -37,11 +37,6 @@ public class UserController {
         return "fail";
     }
 
-    @GetMapping("/{id}")
-    public User getById(@PathVariable Long id) {
-        return userService.getById(id);
-    }
-
     @GetMapping("/all")
     public Collection<User> all() {
         return userService.all();

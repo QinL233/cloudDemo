@@ -3,8 +3,6 @@ package com.lqz.demo.service;
 import com.lqz.demo.entity.User;
 
 import java.util.Collection;
-import java.util.List;
-import java.util.Map;
 
 /**
  * @author liaoqinzhou_sz
@@ -15,8 +13,6 @@ import java.util.Map;
 public interface UserService {
 
     boolean saveUser(User entity);
-
-    User getById(Long id);
 
     Collection<User> all();
 }

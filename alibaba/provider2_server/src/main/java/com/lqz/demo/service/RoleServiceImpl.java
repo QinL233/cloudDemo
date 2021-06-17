@@ -1,8 +1,8 @@
 package com.lqz.demo.service;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.lqz.demo.entity.User;
-import com.lqz.demo.mapper.UserMapper;
+import com.lqz.demo.entity.Role;
+import com.lqz.demo.mapper.RoleMapper;
 import org.apache.dubbo.config.annotation.DubboService;
 
 import java.util.Collection;
@@ -11,18 +11,17 @@ import java.util.Collection;
  * @author liaoqinzhou_sz
  * @version 1.0.0
  * @Description TODO
- * @createTime 2021年06月10日 15:25:00
+ * @createTime 2021年06月17日 17:41:00
  */
 @DubboService
-public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
-
+public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements RoleService {
     @Override
-    public boolean saveUser(User entity) {
+    public boolean saveRole(Role entity) {
         return saveOrUpdate(entity);
     }
 
     @Override
-    public Collection<User> all() {
+    public Collection<Role> all() {
         return list();
     }
 }
