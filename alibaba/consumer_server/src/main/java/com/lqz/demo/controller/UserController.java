@@ -21,9 +21,9 @@ public class UserController {
     @DubboReference
     private UserService userService;
 
-    @GetMapping(value = "/save", produces = "application/x-protobuf")
+    @GetMapping(value = "/save")
     public String save(User entity) {
-        if (userService.save(entity)) {
+        if (userService.saveUser(entity)) {
             return "success";
         }
         return "fail";
@@ -31,7 +31,7 @@ public class UserController {
 
     @PostMapping(value = "/save2")
     public String save2(@RequestBody User entity) {
-        if (userService.save(entity)) {
+        if (userService.saveUser(entity)) {
             return "success";
         }
         return "fail";

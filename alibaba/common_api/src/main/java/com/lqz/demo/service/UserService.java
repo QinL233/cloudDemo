@@ -14,11 +14,7 @@ import java.util.Map;
  */
 public interface UserService {
 
-    boolean save(User entity);
-
-    boolean save(Map<String, User> entity);
-
-    boolean save(List<User> entity);
+    boolean saveUser(User entity);
 
     User getById(Long id);
 

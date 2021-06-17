@@ -19,20 +19,8 @@ import java.util.Map;
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
     @Override
-    public boolean save(User entity) {
+    public boolean saveUser(User entity) {
         return saveOrUpdate(entity);
-    }
-
-    @Override
-    public boolean save(Map<String, User> entity) {
-        entity.forEach((k,v)->save(v));
-        return true;
-    }
-
-    @Override
-    public boolean save(List<User> entity) {
-        entity.forEach(v->save(v));
-        return true;
     }
 
     @Override

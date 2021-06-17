@@ -10,7 +10,7 @@ spring:
     # nacos 注册中心配置
     nacos:
       discovery:
-        server-addr: 127.0.0.1:8847,127.0.0.1:8848,127.0.0.1:8849
+        server-addr: 127.0.0.1:8848
     # sentinel 服务治理
     sentinel:
       eager: true
@@ -28,3 +28,4 @@ dubbo:
   #懒加载
   consumer:
     check: false
+    timeout: 30000
