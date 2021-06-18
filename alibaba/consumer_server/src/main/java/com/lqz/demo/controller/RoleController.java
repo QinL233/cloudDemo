@@ -4,6 +4,7 @@ import com.lqz.demo.entity.Role;
 import com.lqz.demo.entity.User;
 import com.lqz.demo.service.RoleService;
 import com.lqz.demo.service.UserService;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +28,7 @@ public class RoleController {
     @DubboReference
     private RoleService roleService;
 
+    @GlobalTransactional
     @GetMapping("/test")
     public String test(){
         User user = new User();

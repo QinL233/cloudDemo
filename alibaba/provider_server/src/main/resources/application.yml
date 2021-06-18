@@ -20,6 +20,9 @@ spring:
       eager: true
       transport:
         dashboard: localhost:8082
+    alibaba:
+      seata:
+        tx-service-group: seata-test
 #dubbo 配置
 dubbo:
   #提供服务类路径
@@ -35,5 +38,16 @@ dubbo:
     subscribed-services:
 
 mybatis:
-  mapper-locations:
-  - classpath:mybatis-mapper/com/**/mapper/*.xml
+  mapper-locations: classpath:mybatis-mapper/com/**/mapper/*.xml
+
+mybatis-plus:
+  type-aliases-package: io.seata.sample.entity
+
+seata:
+  enabled: true
+  service:
+    vgroup-mapping:
+      seata-test: default
+    grouplist:
+      default: localhost:8091
+    disable-global-transaction: false

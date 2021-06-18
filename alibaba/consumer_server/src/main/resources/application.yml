@@ -16,6 +16,9 @@ spring:
       eager: true
       transport:
         dashboard: localhost:8082
+    alibaba:
+      seata:
+        tx-service-group: seata-test
 #dubbo 配置
 dubbo:
   protocol:
@@ -29,3 +32,12 @@ dubbo:
   consumer:
     check: false
     timeout: 30000
+
+seata:
+  enabled: true
+  service:
+    vgroup-mapping:
+      seata-test: default
+    grouplist:
+      default: localhost:8091
+    disable-global-transaction: false

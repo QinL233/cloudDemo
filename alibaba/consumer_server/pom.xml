@@ -50,6 +50,10 @@
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-serialization-protostuff</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+        </dependency>
         <!-- swagger -->
         <dependency>
             <groupId>io.springfox</groupId>
