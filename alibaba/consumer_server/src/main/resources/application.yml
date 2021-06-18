@@ -22,24 +22,9 @@ spring:
         tx-service-group: seata-test
     # mq 配置
     stream:
-      binder:
-        name-server: localhost:9876
-        bindings:
-          output1:
-            producer:
-              group: binder-group
-              sync: true
-          input1:
-            consumer:
-              orderly: true
-      bindings:
-        output1:
-          destination: test1-topic
-          content-type: application/json
-        input1:
-          destination: test1-topic
-          content-type: text/plain
-          group: test1-group
+      rocketmq:
+        binder:
+          name-server: localhost:9876
 
 #dubbo 配置
 dubbo:

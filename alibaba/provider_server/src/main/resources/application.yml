@@ -20,9 +20,22 @@ spring:
       eager: true
       transport:
         dashboard: localhost:8082
+    #分布式事务
     alibaba:
       seata:
         tx-service-group: seata-test
+    # mq 配置
+    stream:
+      rocketmq:
+        binder:
+          name-server: localhost:9876
+      function:
+        definition: test1
+      bindings:
+        test1-in-0:
+          destination: test1
+          content-type: application/json
+          group: test1-group
 #dubbo 配置
 dubbo:
   #提供服务类路径
