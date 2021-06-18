@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 /**
@@ -24,4 +25,19 @@ public class ConsumerService {
             return message;
         }).then();
     }
+
+    // 第二种方式
+    // 注意使用Flux 要调用 subscribe 不然这个方法不会被消费
+//    @Bean
+//    public Consumer<Flux<Message<String>>> test1() {
+//        return flux -> flux.map(message -> {
+//            System.out.println(message.getPayload());
+//            return message;
+//        }).subscribe();
+//    }
+
+//    @Bean
+//    public Consumer<Message<String>> test1() {
+//        return message -> System.out.println(message.getPayload());
+//    }
 }
