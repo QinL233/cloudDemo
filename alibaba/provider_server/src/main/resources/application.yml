@@ -29,13 +29,15 @@ spring:
       rocketmq:
         binder:
           name-server: localhost:9876
+      #使用函数式绑定topic名称
       function:
         definition: test1
+      #指定消费者的topic和group
       bindings:
         test1-in-0:
           destination: test1
-          content-type: application/json
           group: test1-group
+          content-type: application/json
 #dubbo 配置
 dubbo:
   #提供服务类路径

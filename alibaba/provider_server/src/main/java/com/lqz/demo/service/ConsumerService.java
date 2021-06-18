@@ -18,6 +18,10 @@ import java.util.function.Function;
 @Service
 public class ConsumerService {
 
+    /**
+     * 方法名为topic名称
+     * @return
+     */
     @Bean
     public Function<Flux<Message<String>>, Mono<Void>> test1() {
         return flux -> flux.map(message -> {

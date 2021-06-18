@@ -23,6 +23,7 @@ public class MqController {
 
     @GetMapping("/test")
     public void test(String msg) {
+        //发送到指定的topic中
         streamBridge.send("test1", msg);
     }
 }
