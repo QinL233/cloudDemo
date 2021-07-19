@@ -29,13 +29,19 @@ public class RoleController {
     @DubboReference
     private RoleService roleService;
 
+    /**
+     * 多服务分布式回滚操作
+     * @return
+     */
     @GlobalTransactional
     @GetMapping("/test")
     public String test(){
+        //访问服务1
         User user = new User();
         user.setId(RandomUtils.nextInt());
         user.setUsername("test2");
         userService.saveUser(user);
+        //访问服务2
         Role role = new Role();
         role.setId(RandomUtils.nextInt());
         role.setName("test");
