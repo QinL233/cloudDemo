@@ -21,7 +21,7 @@ public class Role implements Serializable{
 
     private static final long serialVersionUID = 589469880986789329L;
 
-    private Long id;
+    private Integer id;
 
     private String name;
 }

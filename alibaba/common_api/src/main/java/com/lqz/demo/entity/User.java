@@ -21,7 +21,7 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 474447092288987532L;
 
-    private Long id;
+    private Integer id;
 
     private String username;
 
