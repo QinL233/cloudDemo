@@ -34,7 +34,7 @@ spring:
         definition: test2
       #指定消费者的topic和group
       bindings:
-        test1-in-0:
+        test2-in-0:
           destination: test2
           group: test2-group
           content-type: application/json
