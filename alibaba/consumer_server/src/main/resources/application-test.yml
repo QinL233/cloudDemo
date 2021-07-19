@@ -37,7 +37,7 @@ dubbo:
     subscribed-services: provider-server,provider2-server
   #懒加载
   consumer:
-    check: false
+    check: true
     timeout: 30000
 
 seata:
