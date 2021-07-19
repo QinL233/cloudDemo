@@ -1,0 +1,50 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: consumer-server
+  main:
+    # bean 默认名称相同覆盖
+    allow-bean-definition-overriding: true
+  cloud:
+    # nacos 注册中心配置
+    nacos:
+      discovery:
+        server-addr: 192.168.101.134:8848
+    # sentinel 服务治理
+    sentinel:
+      eager: true
+      transport:
+        dashboard: 192.168.101.134:8989
+    # seata 分布式事务
+    alibaba:
+      seata:
+        tx-service-group: seata-test
+    # mq 配置
+    stream:
+      rocketmq:
+        binder:
+          name-server: 192.168.101.134:9876
+
+#dubbo 配置
+dubbo:
+  protocol:
+    name: dubbo
+    #随机端口
+    port: -1
+  #订阅的服务
+  cloud:
+    subscribed-services: provider-server,provider2-server
+  #懒加载
+  consumer:
+    check: false
+    timeout: 30000
+
+seata:
+  enabled: true
+  service:
+    vgroup-mapping:
+      seata-test: default
+    grouplist:
+      default: 192.168.101.134:8091
+    disable-global-transaction: false

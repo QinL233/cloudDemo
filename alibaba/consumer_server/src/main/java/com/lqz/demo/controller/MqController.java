@@ -21,9 +21,15 @@ public class MqController {
     @Autowired
     StreamBridge streamBridge;
 
-    @GetMapping("/test")
-    public void test(String msg) {
+    @GetMapping("/test1")
+    public void test1(String msg) {
         //发送到指定的topic中
         streamBridge.send("test1", msg);
+    }
+
+    @GetMapping("/test2")
+    public void test2(String msg) {
+        //发送到指定的topic中
+        streamBridge.send("test2", msg);
     }
 }

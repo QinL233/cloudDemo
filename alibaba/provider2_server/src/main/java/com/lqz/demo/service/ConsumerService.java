@@ -3,10 +3,8 @@ package com.lqz.demo.service;
 import org.springframework.context.annotation.Bean;
 import org.springframework.messaging.Message;
 import org.springframework.stereotype.Service;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
-import java.util.function.Function;
+import java.util.function.Consumer;
 
 /**
  * @author liaoqinzhou_sz
@@ -22,13 +20,13 @@ public class ConsumerService {
      *
      * @return
      */
-    @Bean
-    public Function<Flux<Message<String>>, Mono<Void>> test2() {
-        return flux -> flux.map(message -> {
-            System.out.println(message.getPayload());
-            return message;
-        }).then();
-    }
+//    @Bean
+//    public Function<Flux<Message<String>>, Mono<Void>> test1() {
+//        return flux -> flux.map(message -> {
+//            System.out.println(message.getPayload());
+//            return message;
+//        }).then();
+//    }
 
     // 第二种方式
     // 注意使用Flux 要调用 subscribe 不然这个方法不会被消费
@@ -39,9 +37,8 @@ public class ConsumerService {
 //            return message;
 //        }).subscribe();
 //    }
-
-//    @Bean
-//    public Consumer<Message<String>> test1() {
-//        return message -> System.out.println(message.getPayload());
-//    }
+    @Bean
+    public Consumer<Message<String>> test1() {
+        return message -> System.out.println(message.getPayload());
+    }
 }
