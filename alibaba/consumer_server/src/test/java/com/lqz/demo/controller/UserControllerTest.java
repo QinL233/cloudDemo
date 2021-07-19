@@ -30,7 +30,7 @@ public class UserControllerTest {
     void proto() throws MalformedURLException {
         String url = "http://localhost:8080/user/save2";
         User user = new User();
-        user.setId(1L);
+        user.setId(1);
         user.setUsername("username");
         user.setPassword("password");
         byte[] body = SerializingUtil.serialize(user);
