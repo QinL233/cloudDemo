@@ -1,0 +1,25 @@
+package com.lqz.demo.entity;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import java.io.Serializable;
+
+/**
+ * @author liaoqinzhou_sz
+ * @version 1.0.0
+ * @Description TODO
+ * @createTime 2021年07月22日 16:46:00
+ */
+@NoArgsConstructor
+@ToString
+@EqualsAndHashCode(callSuper = false)
+@Data
+public class Error implements Serializable {
+
+    private Integer id;
+
+    private String error;
+}

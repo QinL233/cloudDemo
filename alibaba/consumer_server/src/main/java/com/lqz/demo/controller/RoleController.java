@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collection;
+
 /**
  * @author liaoqinzhou_sz
  * @version 1.0.0
@@ -47,5 +49,10 @@ public class RoleController {
         role.setName("test");
         roleService.saveRole(role);
         return "success";
+    }
+
+    @GetMapping("/all")
+    public Collection<Role> all(){
+        return roleService.all();
     }
 }

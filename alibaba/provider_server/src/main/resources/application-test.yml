@@ -66,3 +66,9 @@ seata:
     grouplist:
       default: 192.168.101.134:8091
     disable-global-transaction: false
+
+thread:
+  core_pool_size: 20
+  max_pool_size: 100
+  queue_capacity: 1000
+  prefix: async-service-

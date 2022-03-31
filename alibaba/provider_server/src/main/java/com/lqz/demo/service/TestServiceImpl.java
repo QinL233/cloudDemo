@@ -4,6 +4,7 @@ import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.lqz.demo.exception.TestServiceException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboService;
+import org.springframework.scheduling.annotation.Async;
 
 /**
  * @author liaoqinzhou_sz
@@ -23,5 +24,19 @@ public class TestServiceImpl implements TestService {
             throw new RuntimeException("模拟异常");
         }
         return "test";
+    }
+
+    @Async
+    @Override
+    public String test() {
+        for(int i =0 ;i<10;i++){
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            log.info("wait {}",i);
+        }
+        return "success";
     }
 }

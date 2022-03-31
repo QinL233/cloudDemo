@@ -22,7 +22,12 @@ public class TestController {
     private TestService testService;
 
     @GetMapping
-    public String save(Boolean flag) {
+    public String test(Boolean flag) {
         return testService.test(flag);
+    }
+
+    @GetMapping("/2")
+    public String test() {
+        return testService.test();
     }
 }

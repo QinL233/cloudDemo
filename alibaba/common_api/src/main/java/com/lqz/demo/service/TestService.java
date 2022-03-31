@@ -9,4 +9,6 @@ package com.lqz.demo.service;
 public interface TestService {
 
     String test(Boolean flag);
+
+    String test();
 }

@@ -10,9 +10,11 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class TestServiceException {
-    public static String test ( Boolean flag,Throwable e ) {
+
+
+    public static String test(Boolean flag, Throwable e) {
         if (e instanceof RuntimeException) {
-            log.error (e.getMessage());
+            log.error(e.getMessage());
         }
         return "Error";
     }
